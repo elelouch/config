@@ -18,15 +18,16 @@ require("lazy").setup({
 	"neovim/nvim-lspconfig",
     -- syntax 
 	{"nvim-treesitter/nvim-treesitter", cmd = "TSUpdate" },
-    -- fuzzy find
-    'junegunn/fzf.vim',
-    {'junegunn/fzf', build="./install --bin"},
     -- snippets
+    -- autocompletion
     'dcampos/nvim-snippy',
     'honza/vim-snippets',
-    -- autocompletion
     'dcampos/cmp-snippy',
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/nvim-cmp',
-    'EdenEast/nightfox.nvim'
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-cmdline',	
+    -- theme
+    'rebelot/kanagawa.nvim'
 })

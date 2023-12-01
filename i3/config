@@ -191,13 +191,16 @@ bindsym $mod+r mode "resize"
 #   bar {
 #           status_command i3status
 #   }
+# class                 border  backgr. text    indicator child_border
+client.focused          #268bd2 #268bd2 #ffffff #268bd2   #268bd2
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
-for_window [class="^.*"] border pixel 0
-exec setxkbpmap -option caps:swapescape
-exec xrandr
-exec xrandr --output HDMI-1 --mode 1440x900 --rate 74.98
-exec --no-startup-id setxkbmap -option caps:swapescape
-exec --no-startup-id polybar
-exec sleep 1 && feh --bg-scale /home/elias/Downloads/casita.jpg
+client.background       #ffffff
+
+default_border pixel 3
 gaps inner 5    
-gaps outer 5      
+gaps outer 3  
+exec --no-startup-id /home/elias/.config/i3/startup.sh
