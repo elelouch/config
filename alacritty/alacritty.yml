@@ -131,7 +131,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: LiterationMonoNerdFont
+    family: DejaVuSansMono
     # The `style` can be specified to pick a specific face.
     #style: Regular
 
@@ -199,8 +199,8 @@ font:
 colors:
   # Default colors
   primary:
-    background: "#ffffff"
-    foreground: "#000000"
+    background: "#000000"
+    foreground: "#ffffff"
 
     # Bright and dim foreground colors
     #
