@@ -1,5 +1,4 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
@@ -28,6 +27,4 @@ require("lazy").setup({
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',	
-    -- colorschemes
-    'yorickpeterse/vim-paper'
 })
