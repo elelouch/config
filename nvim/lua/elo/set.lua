@@ -35,4 +35,4 @@ vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
 vim.opt.guicursor = ""
-vim.cmd 'colorscheme monokai-pro-spectrum'
+vim.cmd 'colorscheme kanagawa-dragon'
