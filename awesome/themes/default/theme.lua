@@ -11,7 +11,7 @@ local themes_path = '/home/nerfelo/.config/awesome/themes/'
 
 local theme = {}
 
-theme.font          = "Hack 18"
+theme.font          = "Hack 14"
 
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#535d6c"

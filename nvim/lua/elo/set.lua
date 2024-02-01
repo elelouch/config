@@ -35,4 +35,4 @@ vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
 vim.opt.guicursor = ""
-vim.cmd 'colorscheme kanagawa-dragon'
+vim.cmd.colorscheme 'melange'

@@ -4,5 +4,5 @@ run() {
         "$@" & # tira el programa con sus argumentos en background
     fi
 }
-run setxkbmap -option caps:swapescape
+run setxkbmap -option ctrl:swapcaps
 run flameshot
