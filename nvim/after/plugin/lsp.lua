@@ -77,6 +77,8 @@ lspconfig.phpactor.setup({
 	},
 })
 
+
+
 -- angular
 local project_library_path = "/path/to/project/lib"
 local cmd = {"ngserver", "--stdio", "--tsProbeLocations", project_library_path , "--ngProbeLocations", project_library_path}
@@ -88,3 +90,5 @@ lspconfig.angularls.setup{
   end,
 }
 
+-- sql
+lspconfig.sqlls.setup{}

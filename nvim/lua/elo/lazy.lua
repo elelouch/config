@@ -14,9 +14,9 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " " -- make sure to set `mapleader` before lazy so your mappings are correct
 
 require("lazy").setup({
-	"neovim/nvim-lspconfig",
+    "neovim/nvim-lspconfig",
     -- syntax 
-	{"nvim-treesitter/nvim-treesitter", cmd = "TSUpdate" },
+    {"nvim-treesitter/nvim-treesitter", cmd = "TSUpdate" },
     -- snippets
     'dcampos/nvim-snippy',
     'honza/vim-snippets',
@@ -27,5 +27,6 @@ require("lazy").setup({
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',	
-    'savq/melange-nvim'
+    { "junegunn/fzf", build = "./install --bin" },
+    "junegunn/fzf.vim",
 })
