@@ -29,4 +29,5 @@ require("lazy").setup({
     'hrsh7th/cmp-cmdline',	
     { "junegunn/fzf", build = "./install --bin" },
     "junegunn/fzf.vim",
+    "rebelot/kanagawa.nvim"
 })

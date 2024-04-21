@@ -92,3 +92,5 @@ lspconfig.angularls.setup{
 
 -- sql
 lspconfig.sqlls.setup{}
+
+lspconfig.tsserver.setup{}

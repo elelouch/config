@@ -36,4 +36,4 @@ vim.g.netrw_winsize = 25
 
 vim.opt.guicursor = ""
 vim.o.background =  'dark'
-vim.cmd.colorscheme 'habamax'
+vim.cmd.colorscheme "kanagawa-dragon"

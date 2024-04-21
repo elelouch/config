@@ -4,5 +4,7 @@ run() {
         "$@" & # tira el programa con sus argumentos en background
     fi
 }
+
+run xrandr --output HDMI-1 --mode 1440x900
 run setxkbmap -option ctrl:swapcaps
 run flameshot
