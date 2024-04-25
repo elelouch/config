@@ -1,9 +1,10 @@
 local km = vim.keymap
 -- debug
-km.set("n", "<leader>ff", "<cmd>Files<CR>")
-km.set("n", "<leader>fg", "<cmd>GFiles<CR>")
-km.set("n", "<leader>rg", "<cmd>Rg<CR>")
-km.set("n", "<leader>fb", "<cmd>Buffers<CR>")
+local builtin = require('telescope.builtin')
+km.set('n', '<leader>ff', builtin.find_files, {})
+km.set('n', '<leader>fg', builtin.live_grep, {})
+km.set('n', '<leader>fb', builtin.buffers, {})
+km.set('n', '<leader>fh', builtin.help_tags, {})
 km.set("n", "<leader>1", "<cmd>Le<CR>")
 -- reset cfg
 km.set("n", "<leader>xx", "<cmd>luafile $MYVIMRC<CR>")

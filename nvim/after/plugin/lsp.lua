@@ -57,28 +57,6 @@ lspconfig.pyright.setup({
 	capabilities = capabilities,
 })
 
-lspconfig.ccls.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	init_options = {
-		cache = {
-			directory = ".ccls-cache",
-		},
-	},
-    filetypes = { "c", "cpp", "objc", "objcpp","h"}
-})
-
-lspconfig.phpactor.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	init_options = {
-		["language_server_phpstan.enabled"] = false,
-		["language_server_psalm.enabled"] = false,
-	},
-})
-
-
-
 -- angular
 local project_library_path = "/path/to/project/lib"
 local cmd = {"ngserver", "--stdio", "--tsProbeLocations", project_library_path , "--ngProbeLocations", project_library_path}
@@ -93,4 +71,6 @@ lspconfig.angularls.setup{
 -- sql
 lspconfig.sqlls.setup{}
 
-lspconfig.tsserver.setup{}
+lspconfig.clangd.setup{}
+
+lspconfig.emmet_language_server.setup{}
