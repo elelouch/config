@@ -58,7 +58,7 @@ lspconfig.pyright.setup({
 })
 
 -- angular
-local project_library_path = "/path/to/project/lib"
+local project_library_path = "/home/nerfelo/.local/src/javascript/angular/test1"
 local cmd = {"ngserver", "--stdio", "--tsProbeLocations", project_library_path , "--ngProbeLocations", project_library_path}
 
 lspconfig.angularls.setup{

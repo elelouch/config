@@ -11,8 +11,8 @@ if wezterm.config_builder then
 end
 
 -- This is where you actually apply your config choices
-config.font = wezterm.font 'SauceCodeProNerdFont'
-config.font_size = 16
+config.font = wezterm.font 'IBMPlexMono'
+config.font_size = 14
 config.colors = {
     background = "191919",
     foreground = "8e8e8e"

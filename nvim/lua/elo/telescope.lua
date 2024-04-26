@@ -1,5 +1,9 @@
 require('telescope').setup{
   defaults = {
-    preview = false
+    preview = false,
+    file_ignore_patterns = {
+      "node_modules",
+      ".git"
+    }
   }
 }
