@@ -1,0 +1,7 @@
+[font]
+normal = { family = "MonaspaceKrypton", style = "Regular" }
+
+
+[colors.primary]
+foreground = "#cecece"
+background = "#000000"
