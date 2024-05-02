@@ -12,7 +12,7 @@ end
 
 -- This is where you actually apply your config choices
 config.font = wezterm.font 'IBMPlexMono'
-config.font_size = 14
+config.font_size = 12   
 config.colors = {
     background = "191919",
     foreground = "8e8e8e"
