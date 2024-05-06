@@ -192,4 +192,6 @@ bar {
 exec --no-startup-id xrandr --output HDMI-1 --mode 1440x900 --rate 74.98
 exec --no-startup-id feh --bg-scale /home/nerfelo/Pictures/3472.jpg
 exec --no-startup-id setxkbmap -option ctrl:swapcaps
+for_window [class="^.*"] border pixel 3
+new_window 1pixel
 
