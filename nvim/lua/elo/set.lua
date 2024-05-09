@@ -36,5 +36,5 @@ vim.g.netrw_winsize = 25
 vim.g.netrw_keepdir = 0
 
 vim.opt.guicursor = ""
-vim.o.background =  'dark'
-vim.cmd.colorscheme "coal"
+vim.o.background = 'dark'
+vim.cmd.colorscheme "flexoki-dark"
