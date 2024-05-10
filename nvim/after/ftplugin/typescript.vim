@@ -1,3 +1,3 @@
 set expandtab
-set tabstop=2
+set tabstop=4
 set shiftwidth=2

@@ -1,0 +1,73 @@
+Wireshark - TCP 
+Elias Rojas 3ro AUS
+
+1 - IP : 192.168.100
+    Puerto : 1161
+
+2 - IP : 128.119.245.12
+    Puerto : 80
+
+3 - El numero de secuencia generado para el segmento que comienza la conexion es
+    232129012. El numero de secuencia relativo es 0.
+    El segmento es SYN porque la unica flag utilizada es SYN.
+
+4 - El numero de secuencia del SYNACK generado por gaia es 883061785. Con numero
+    de secuencia relativo 0.
+    El valor del ACK es 1, indicando que el siguiente byte esperado es el primero.
+    Gaia determina ese valor de ACK por lo dicho previamente. 
+    El valor del numero de secuencia es generado aleatoriamente, luego, se ira 
+    incrementando segun el tamanio de datos enviado previamente.
+    NumSeq = NumSeq + LenRecibido
+
+5 - El numero de secuencia del segmento con HTTP POST es 232129013.
+
+6 - Por lo que entiendo, la consigna hace diferencia entre segmentos enviados y
+    sus respectivos ACK, por lo que voy a tomar solo aquellos segmentos que salen
+    del cliente.
+    ------------------------------------------------------------------------------------------------------
+    |Numero de secuencia    |Tiempo salida  |Numero de ACK  |Tiempo recepcion   | RTT       | EstimatedRTT
+    |(largo previo en bytes)|               |               |de ACK             |           |
+    ------------------------------------------------------------------------------------------------------
+    |    232129013          |   0.026477s   | 232129578     | 0.053937s         | 0.027460s |  0.027460s
+    |    232129578 (+565)   |   0.041737s   | 232129038     | 0.077294s         | 0.035557s |  0.028471s 
+    |    232131038 (+1460)  |   0.054026s   | 232132498     | 0.124085s         | 0.070059s |  0.033669s
+    |    232132498 (+1460)  |   0.054690s   | 232133958     | 0.169118s         | 0.114428s |  0.043763s 
+    |    232133958 (+1460)  |   0.077405s   | 232135418     | 0.217299s         | 0.139894s |  0.055778s
+    |    232135418 (+1460)  |   0.078157s   | 232136878     | 0.267802s         | 0.189645s |  0.072510s
+    -----------------------------------------------------------------------------------------------------    
+
+7 - Las longitudes de los primeros 6 segmentos son de 1460 excepto el primero, que
+    tiene un segmento de 565 bytes.
+
+8 - El tamanio de ventana minimo que encontre en la traza es de 5840 por parte
+    de gaia (rfc 3390). Segun el grafico de escalado de ventana, el menor tamanio de la rwnd
+    6870, y el maximo es de 62780, quedando planchado en ese tamanio el resto de
+    la traza.
+
+9 - No hay segmentos retransmitidos, porque el grafico de Stevens (numero de secuencia/tiempo)
+    es no decreciente, quiere decir que nunca se tuvo que reenviar un numero de 
+    secuencia, o sea, no hubo retransmisiones.
+
+10 -Generalmente se terminan asintiendo 1460 bytes. Como mucho, se asienten dos segmentos
+    de 1460 (2960 bytes).
+    Un ejemplo son los segmentos numero 65 y 66 que son asentidos por el segmento 70.
+    Notese que el asentimiento 69 y 70 tienen una diferencia de 2920.
+
+11 -Para calcular el total de bytes transferidos por parte del cliente puedo tomar
+    el valor del ultimo ACK relativo menos uno (porque comienza la transimision
+    en el byte 1).
+    Este valor, se puede dividir por el tiempo transcurrido en la trama para tener
+    la cantidad de bytes enviados por segundo.
+    Ultimo ACK : 164091 
+    (164091 - 1) / 5.651141s = 29036 bytes/s
+
+12 -La fase slowstart va comienza desde 0.04174s y temina en 0.1242s.
+    El congestion avoidance esta activo el resto de la conexion.
+    Esto se puede apreciar debido a que los "burst" son de a dos segmento,  
+    lo que quiere decir que por cada ACK salio un segmento (slowstart).
+    Luego, los "bursts" son todos continuos.
+    No se puede apreciar el sawtooth pattern como nombra Tanenbaum en su libro.
+    Tal vez porque se esta apreciando como aumenta el numero de secuencia nomas.
+    La cwnd actual parece estar estatica, no se nota que se agreguen segmentos
+    por cada burst (siempre hay seis envios).
+
