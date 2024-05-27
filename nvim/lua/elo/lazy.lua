@@ -14,7 +14,11 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " " -- make sure to set `mapleader` before lazy so your mappings are correct
 
 require("lazy").setup({
-  "neovim/nvim-lspconfig",
+  {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  },
   -- syntax 
   {"nvim-treesitter/nvim-treesitter", cmd = "TSUpdate" },
   -- snippets
@@ -27,23 +31,15 @@ require("lazy").setup({
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-path',
   'hrsh7th/cmp-cmdline',	
-  { 'kepano/flexoki-neovim', name = 'flexoki' },
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.6',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
   {
-    'stevearc/conform.nvim',
-    opts = {}
+    'stevearc/oil.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = { "nvim-tree/nvim-web-devicons" },
   },
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
-    }
-  }
-
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
 })

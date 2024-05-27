@@ -6,7 +6,7 @@ pcall(require, "luarocks.loader")
 local my_wibar = require("wibar")
 local gears = require("gears")
 local awful = require("awful")
-local browser = "firefox"
+local browser = "chromium"
 require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
@@ -56,7 +56,7 @@ local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.ge
 beautiful.init(theme_path)
 
 -- This is used later as the default terminal and editor to run.
-terminal = "alacritty"
+terminal = "wezterm"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 

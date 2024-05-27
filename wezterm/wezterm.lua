@@ -11,11 +11,11 @@ if wezterm.config_builder then
 end
 
 -- This is where you actually apply your config choices
-config.font = wezterm.font 'Hack'
+config.font = wezterm.font 'IntelOneMono'
 config.font_size = 12   
 config.colors = {
-    background = "191919",
-    foreground = "8e8e8e"
+    background = "000000",
+    foreground = "ffffff"
 }
 
 return config
