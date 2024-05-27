@@ -1,6 +1,5 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require("lspconfig")
-local conform = require("conform")
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions

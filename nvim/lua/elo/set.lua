@@ -37,4 +37,4 @@ vim.g.netrw_keepdir = 0
 
 vim.opt.guicursor = ""
 vim.o.background = 'dark'
-vim.cmd.colorscheme "flexoki-dark"
+vim.cmd.colorscheme "kanagawa-dragon"
