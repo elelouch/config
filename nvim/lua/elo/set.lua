@@ -37,6 +37,7 @@ vim.g.netrw_keepdir = 0
 
 vim.opt.guicursor = ""
 vim.o.background = 'dark'
+<<<<<<< HEAD
 
 require('catppuccin').setup{
     color_overrides = {
@@ -48,5 +49,3 @@ require('catppuccin').setup{
     }
   }
 vim.cmd.colorscheme "catppuccin-mocha"
-
--- catpuccin
