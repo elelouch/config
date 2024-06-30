@@ -36,16 +36,5 @@ vim.g.netrw_winsize = 25
 vim.g.netrw_keepdir = 0
 
 vim.opt.guicursor = ""
-vim.o.background = 'dark'
-<<<<<<< HEAD
-
-require('catppuccin').setup{
-    color_overrides = {
-      mocha = {
-        base = "#000000",
-        mantle = "#000000",
-        crust = "#000000",
-      },
-    }
-  }
-vim.cmd.colorscheme "catppuccin-mocha"
+vim.o.background = 'light'
+vim.cmd 'colorscheme lunaperche'
