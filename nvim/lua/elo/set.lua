@@ -36,14 +36,3 @@ vim.g.netrw_winsize = 25
 vim.g.netrw_keepdir = 0
 
 vim.opt.guicursor = ""
-require("catppuccin").setup {
-    color_overrides = {
-        mocha = {
-          base = "#000000",
-          mantle = "#000000",
-          crust = "#000000",
-          text = "#ffffff"
-        },
-    }
-}
-vim.cmd 'colorscheme catppuccin-mocha'
