@@ -1,0 +1,113 @@
+Este material fue preparado encarando el tema desde la perspectiva de composicion
+de funciones.
+
+Algunos conceptos para llevarse de la lectura:
+    - Composicion de funciones.
+    - Las monadas sirven para el modelado de computaciones impuras.
+
+*** Monadas 
+
+** Introduccion, computaciones puras e impuras
+En lenguajes funcionales, las funciones son generalmente llamadas "puras", son reglas
+que frente a un mismo input, generan el mismo output. Esto tambien hace referencia a que
+el proceso en ejecucion no tiene contacto con variables externas (IO, llamadas a la red, archivos, ...)
+ni errores durante una ejecucion.
+Por lo anterior, se podria afirmar que una funcion es deterministica.
+
+Pero...Yo quiero interactuar con cosas externas en mi programa, necesitaria por ejemplo
+poder persistir mis datos en algun lado.
+Son las monadas las que se encargan de esto, lo estaremos presentando brevemente.
+
+Desde la perspectiva de un usuario, esta estructura lo unico que va a hacer es
+contener un resultado.
+
+** Monadas
+Las monadas son abstracciones que nos permiten aislar y contener computaciones impuras.
+En este entorno controlado, se gana modularidad y facilidad de debugging sin romper 
+con lo puro del lenguaje.
+Se las puede ver como la descripcion de un comportamiento abstracto.
+Veamos lo anterior con un ejemplo de una funcion, donde algo
+
+            f :: a -> [ ...algo... ]  -> b
+
+representa una computacion impura que queremos hacer en una funcion pura.
+
+Ese algo, es una monada, y es la descripcion de un comportamiento pero de manera abstracta.
+Podriamos tener las siguientes monadas tambien
+
+Para entrada y salida 
+        f :: a -> [ ...IO... ] -> b
+Para funciones que pueden fallar
+        f :: a -> [ ...Maybe a...] -> b
+Para errores
+        f :: a -> [ ...error... ] -> b
+Para funciones que interactuan con estados exteriores
+        f :: a -> [ ...State s... ] -> b
+
+La notacion anterior no es valida en haskell, no corresponde a su sintaxis,
+por lo que vamos a "haskellizarla".
+
+Para entrada y salida:
+        f :: IO (a -> b)        o       f :: a -> IO b
+Para funciones que pueden fallar
+        f :: Maybe (a -> b)     o       f:: a -> Maybe b
+Estas tienen el tipo
+        f :: a -> m b
+Donde m es un tipo monadico que "envuelve" la salida de ese programa.
+
+** Que es ese "valor monadico"? (m b)
+
+Estos "valores monadicos" (m b) representan algo no intuitivo? Que es IO Int, Maybe String?....
+Estos "valores monadicos" no representan mas que el resultado de una funcion monadica y ya.
+Se podrian entender como
+    1. Valor monadico (m b) es una accion que devuelve el tipo b (return b)
+    2. Un contenedor de tipos b
+La opcion 2 es la menos acertada entre las dos. Entonces, si es una accion...Como la realizo?
+
+Tomemos de ejemplo getLine::IO String  y  putStrLn::String -> IO String
+
+El tipo de putStrLn es mas amigable, toma una String , hace algo en el medio y devuelve una IO String
+getLine no esta conteniendo un valor de string, en realidad, espera una entrada
+por consola y recien ahi la devuelve.
+
+Entonces, estos valores monadicos, en realidad tienen que realizar trabajo antes
+de poder obtener un valor. En realidad, en un lenguaje convencional uno tendria tipos
+como los siguientes
+
+getLine :: () -> String
+putStrLn :: String -> ()
+
+y para usarlos solo hariamos
+
+getLine ()
+
+putStrLn "Hola"
+
+Donde () es el tipo unidad (Unit), solo puede tener ese y ningun otro.
+
+** Composicion de funciones
+Demos un paso hacia atras para ver una idea que nos ayudara a pegar estas 
+abstracciones.
+
+Lo mas cercano que tenemos es la composicion de funciones.
+Las funciones siempre son puras, nunca generan efectos secundarios de ningun tipo.
+
+Dadas dos funciones 
+    f :: A -> B y g :: B -> C
+y la definicion de composicion 
+    (.) :: (B -> C) -> (A -> B)  -> A -> C
+podemos pegar dos funciones puras
+    (g . f) :: A -> C
+
+El hermano de la composicion, es el operador >.> que funciona como un unix pipe.
+
+    f >.> g      es mas natural que      g . f           
+
+Son lo mismo a efectos practicos.  Tipo de (>.>). (>.>) :: (A -> B) -> (B -> C) -> A -> C
+
+
+
+Bibliografia
+    - Antonio Locasio, Por que importan las monadas? (2023)
+    - Dan Piponi, You Could Have Invented Monads!
+    - Mike Vanier, Yet Another Monad Tutorial

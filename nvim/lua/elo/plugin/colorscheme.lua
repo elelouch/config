@@ -7,14 +7,13 @@ return {
       require("catppuccin").setup {
       color_overrides = {
           mocha = {
-            base = "#000000",
-            mantle = "#000000",
-            crust = "#000000",
+            base = "#0f0f0f",
+            mantle = "#0f0f0f",
+            crust = "#101010",
             text = "#ffffff"
           },
         }
       }
-      vim.cmd 'colorscheme catppuccin-mocha'
     end
   }
 }

@@ -11,12 +11,12 @@ if wezterm.config_builder then
 end
 
 -- This is where you actually apply your config choices
-config.font_size = 13   
-config.font = wezterm.font 'Hack Nerd Font Mono'
+config.font_size = 12   
+config.font = wezterm.font 'Liberation Mono'
 config.harfbuzz_features = {"calt=0", "clig=0", "liga=0"}
 config.colors = {
-    background = "000000",
-    foreground = "ffffff"
+    background = "ffffff",
+    foreground = "000000"
 }
 config.hide_tab_bar_if_only_one_tab = true
 

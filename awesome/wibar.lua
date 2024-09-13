@@ -7,8 +7,8 @@ function my_wibar.personalized_wibar(current_screen)
         position="top",
         screen = current_screen,
         opacity = 0,
-        bg = "#191919",
-        fg = "#b8b8b8"
+        bg = "#ffffff",
+        fg = "#000000"
     })
 
     wbar:setup {
