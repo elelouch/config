@@ -11,21 +11,21 @@ local themes_path = '/home/nerfelo/.config/awesome/themes/'
 
 local theme = {}
 
-theme.font          = "IBMPlexMono 10"
+theme.font          = "Input Mono 10"
 
 theme.bg_normal     = "#000000"
-theme.bg_focus      = "#ffffff"
+theme.bg_focus      = "#000000"
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = "#000000"
+theme.fg_normal     = "#ffffff"
 theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 
 theme.useless_gap   = dpi(0)
-theme.border_width  = dpi(2)
+theme.border_width  = dpi(1)
 theme.border_normal = "#ffffff"
 theme.border_focus  = "#7ea4b3"
 theme.border_marked = "#91231c"
@@ -97,7 +97,7 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path.."default/titlebar
 theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = "/home/elias/Pictures/673304.png"
+theme.wallpaper = "/home/elias/Pictures/wallpe.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"

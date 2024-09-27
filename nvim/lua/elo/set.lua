@@ -37,4 +37,3 @@ vim.g.netrw_keepdir = 0
 
 vim.opt.guicursor = ""
 vim.cmd 'colorscheme lunaperche'
-vim.cmd 'set background=light'

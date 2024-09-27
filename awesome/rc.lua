@@ -6,7 +6,7 @@ pcall(require, "luarocks.loader")
 local my_wibar = require("wibar")
 local gears = require("gears")
 local awful = require("awful")
-local browser = "chromium"
+local browser = "firefox"
 require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
@@ -15,6 +15,7 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+local volume = require("volume")
 local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
@@ -52,11 +53,11 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 -- beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
-local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "sky")
+local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "default")
 beautiful.init(theme_path)
 
 -- This is used later as the default terminal and editor to run.
-terminal = "alacritty"
+terminal = "wezterm"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -348,7 +349,14 @@ globalkeys = gears.table.join(
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+              {description = "show the menubar", group = "launcher"}),
+    -- Volume 
+   awful.key({}, "XF86AudioRaiseVolume", function() volume.up() end,
+             {description = "volume up", group = "volume"}),
+   awful.key({}, "XF86AudioLowerVolume", function() volume.down() end,
+             {description = "volume down", group = "volume"}),
+   awful.key({}, "XF86AudioMute", function() volume.toggle() end,
+             {descriptoin = "mute / unmute", group = "volume"})
 )
 
 clientkeys = gears.table.join(

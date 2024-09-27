@@ -1,14 +1,15 @@
+local volume_widget = require("volume")
 local awful = require("awful")
 local wibox = require("wibox")
 local my_wibar = {}
 
 function my_wibar.personalized_wibar(current_screen) 
     local wbar = awful.wibar({
-        position="top",
+        position="bottom",
         screen = current_screen,
         opacity = 0,
-        bg = "#ffffff",
-        fg = "#000000"
+        bg = "#000000",
+        fg = "#ffffff"
     })
 
     wbar:setup {
@@ -21,6 +22,7 @@ function my_wibar.personalized_wibar(current_screen)
         },
         current_screen.mytasklist, -- Middle widget
         { -- Right widgets
+            volume_widget.getwidget(),
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
             wibox.widget.systray(),
