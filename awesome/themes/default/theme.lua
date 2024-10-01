@@ -11,7 +11,7 @@ local themes_path = '/home/nerfelo/.config/awesome/themes/'
 
 local theme = {}
 
-theme.font          = "Input Mono 10"
+theme.font          = "Iosevka Nerd Font Mono 10"
 
 theme.bg_normal     = "#000000"
 theme.bg_focus      = "#000000"

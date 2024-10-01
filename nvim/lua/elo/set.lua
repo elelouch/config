@@ -35,4 +35,4 @@ vim.g.netrw_winsize = 25
 vim.g.netrw_keepdir = 0
 
 vim.opt.guicursor = ""
-vim.cmd("colorscheme nordfox")
+vim.cmd("colorscheme rose-pine")
