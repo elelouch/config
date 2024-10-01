@@ -21,6 +21,3 @@ require("lazy").setup({
     notify = false
   }
 })
-
-require("elo.remap")
-require("elo.set")
