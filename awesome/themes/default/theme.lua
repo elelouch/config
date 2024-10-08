@@ -7,11 +7,11 @@ local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 
 local gfs = require("gears.filesystem")
-local themes_path = '/home/nerfelo/.config/awesome/themes/'
+local themes_path = '/home/elias/.config/awesome/themes/default/'
 
 local theme = {}
 
-theme.font          = "Iosevka Nerd Font Mono 10"
+theme.font          = "Monospace 10"
 
 theme.bg_normal     = "#000000"
 theme.bg_focus      = "#000000"
@@ -97,7 +97,7 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path.."default/titlebar
 theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = "/home/elias/Pictures/Sakura.jpg"
+theme.wallpaper = themes_path.."creamy-dragon.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"
