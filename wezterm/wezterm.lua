@@ -13,7 +13,6 @@ end
 -- This is where you actually apply your config choices
 config.freetype_load_flags = 'NO_HINTING'
 config.font_size = 14
-config.font = wezterm.font("CommitMono Nerd Font")
 config.harfbuzz_features = {"calt=0", "clig=0", "liga=0"}
 config.colors = {
     background = "000000",

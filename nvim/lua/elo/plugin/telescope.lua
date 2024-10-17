@@ -17,7 +17,10 @@ return {
           preview = false,
           file_ignore_patterns = {
             "node_modules",
-            ".git"
+            ".git",
+            "include",
+            "bin",
+            "lib"
           }
         }
       }
