@@ -14,8 +14,9 @@ end
 config.freetype_load_flags = 'NO_HINTING'
 config.font_size = 14
 config.harfbuzz_features = {"calt=0", "clig=0", "liga=0"}
+config.font = wezterm.font("Hack Nerd Font Mono")
 config.colors = {
-    background = "000000",
+    background = "181818",
     foreground = "e0e0e0"
 }
 config.hide_tab_bar_if_only_one_tab = true
