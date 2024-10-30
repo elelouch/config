@@ -4,7 +4,7 @@
 (blink-cursor-mode -1)
 (global-display-line-numbers-mode 1)
 
-(setq make-backup-files nil)
+
 
 (when (member "JetBrainsMono Nerd Font Mono" (font-family-list))
   (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-14")
@@ -22,9 +22,6 @@
 (add-hook 'yaml-mode-hook
           (lambda ()
             (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
-
-;; set tab to spaces
-(setq indent-tabs-mode nil)
 
 ;; c coding
 (setq c-default-style "linux"
@@ -64,3 +61,6 @@
     (setq exec-path (split-string path-from-shell path-separator))))
 			  
 (when window-system (set-exec-path-from-shell-PATH))
+(setq make-backup-files nil)
+;; set tab to spaces
+(setq indent-tabs-mode nil)
