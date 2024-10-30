@@ -6,8 +6,6 @@
 
 (setq make-backup-files nil)
 
-(load-theme 'danneskjold t)
-
 (when (member "JetBrainsMono Nerd Font Mono" (font-family-list))
   (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-14")
   (set-face-attribute 'fixed-pitch nil :family "JetBrainsMono Nerd Font-14"))
@@ -18,6 +16,8 @@
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
+
+(package-initialize)
 
 (add-hook 'yaml-mode-hook
           (lambda ()
@@ -32,23 +32,35 @@
 
 ;; dired do what I mean
 (setq dired-dwim-target t)
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("51fa6edfd6c8a4defc2681e4c438caf24908854c12ea12a1fbfd4d055a9647a3"
-     "061a51bb4c6782d25243b975d1da8f11100b158c4d84d5b582a41febca43597a"
-     "8b4af9cacdaaf0a85e968abb2111f563cf82a16a005b7fac6f6026cc5d13bd10"
-     "ebdaa6f5ec2f4c5afb361d785d7c49374c4f0d0c0512132bc87f1372ffd9f506"
-     "8363207a952efb78e917230f5a4d3326b2916c63237c1f61d7e5fe07def8d378"
+   '("a2aea76e411311750871ade96aac4bc83457ced5feb1806d3905fb11b3f9c055"
+     "a7026ae6351ed42b2e71f373e173e6d9da5bd0c5461dc1861aa74c1a247c1a97"
      default))
- '(package-selected-packages '(danneskjold-theme magit yaml-mode)))
+ '(package-selected-packages '(haskell-mode ir-black-theme magit yaml-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(load-theme 'ir-black)
+
+
+;; exec path
+
+(defun set-exec-path-from-shell-PATH ()
+  (let ((path-from-shell (replace-regexp-in-string
+			  "[ \t\n]*$"
+			  ""
+			  (shell-command-to-string "$SHELL --login -i -c 'echo $PATH'"))))
+    (setenv "PATH" path-from-shell)
+    (setq eshell-path-env path-from-shell) ;; eshell users
+    (setq exec-path (split-string path-from-shell path-separator))))
+			  
+(when window-system (set-exec-path-from-shell-PATH))
