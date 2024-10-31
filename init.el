@@ -5,10 +5,9 @@
 (global-display-line-numbers-mode 1)
 
 
-
-(when (member "JetBrainsMono Nerd Font Mono" (font-family-list))
-  (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-14")
-  (set-face-attribute 'fixed-pitch nil :family "JetBrainsMono Nerd Font-14"))
+(when (member "Hack Nerd Font" (font-family-list))
+  (set-face-attribute 'default nil :font "Hack Nerd Font-14")
+  (set-face-attribute 'fixed-pitch nil :family "Hack Nerd Font-14"))
 
 ;; activate line numbering in all buffers/modes
 (global-display-line-numbers-mode) 
@@ -35,10 +34,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("a2aea76e411311750871ade96aac4bc83457ced5feb1806d3905fb11b3f9c055"
-     "a7026ae6351ed42b2e71f373e173e6d9da5bd0c5461dc1861aa74c1a247c1a97"
-     default))
- '(package-selected-packages '(haskell-mode ir-black-theme magit yaml-mode)))
+   '("ba5c5bdef8de41ffa8eca30fc56e7404d6e787d7836702f5e367794a759393c5" default))
+ '(package-selected-packages '(nordic-night-theme haskell-mode magit yaml-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -46,7 +43,7 @@
  ;; If there is more than one, they won't work right.
  )
 
-(load-theme 'ir-black)
+(load-theme 'nordic-night)
 
 
 ;; exec path
@@ -64,3 +61,10 @@
 (setq make-backup-files nil)
 ;; set tab to spaces
 (setq indent-tabs-mode nil)
+
+
+;; haskell
+
+(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
