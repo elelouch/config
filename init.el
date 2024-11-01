@@ -34,8 +34,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("ba5c5bdef8de41ffa8eca30fc56e7404d6e787d7836702f5e367794a759393c5" default))
- '(package-selected-packages '(nordic-night-theme haskell-mode magit yaml-mode)))
+   '("74615d4ae8fa10941cd0c092aa8b6989eb75ef342054f6e88716aae8a9d2f873" "a7026ae6351ed42b2e71f373e173e6d9da5bd0c5461dc1861aa74c1a247c1a97" default))
+ '(package-selected-packages '(purple-haze-theme haskell-mode magit yaml-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -43,7 +43,7 @@
  ;; If there is more than one, they won't work right.
  )
 
-(load-theme 'nordic-night)
+(load-theme 'modus-operandi)
 
 
 ;; exec path
