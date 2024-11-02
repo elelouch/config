@@ -22,5 +22,4 @@ vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 vim.g.netrw_keepdir = 0
 vim.opt.guicursor = ""
-vim.opt.background = "dark"
-vim.cmd 'colorscheme retrobox'
+vim.cmd 'colorscheme rose-pine-moon'
