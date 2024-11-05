@@ -5,7 +5,7 @@ local my_wibar = {}
 
 function my_wibar.personalized_wibar(current_screen) 
     local wbar = awful.wibar({
-        position="bottom",
+        position="top",
         screen = current_screen,
         opacity = 0,
         bg = "#000000",
