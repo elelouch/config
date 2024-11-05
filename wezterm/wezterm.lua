@@ -14,14 +14,13 @@ end
 config.freetype_load_flags = 'NO_HINTING'
 config.font_size = 14
 config.harfbuzz_features = {"calt=0", "clig=0", "liga=0"}
-config.font = wezterm.font("Hack Nerd Font Mono")
+config.font = wezterm.font("JetBrains Mono")
 config.colors = {
-    background = "181818",
-    foreground = "e0e0e0"
+    background = "161616",
+    foreground = "eeeeee"
 }
 config.hide_tab_bar_if_only_one_tab = true
 config.leader = {key = ' ', mods = 'CTRL', timeout_miliseconds=1000}
-config.front_end = "WebGpu"
 
 local act = wezterm.action
 config.keys = {
