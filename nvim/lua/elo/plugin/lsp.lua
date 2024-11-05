@@ -35,8 +35,8 @@ return {
       require("mason").setup()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "denols",
-          "tsserver",
+          -- "denols",
+          "ts_ls",
           "hls",
           "marksman",
           "eslint",

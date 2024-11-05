@@ -16,7 +16,7 @@ config.font_size = 14
 config.harfbuzz_features = {"calt=0", "clig=0", "liga=0"}
 config.font = wezterm.font("JetBrains Mono")
 config.colors = {
-    background = "161616",
+    background = "000000",
     foreground = "eeeeee"
 }
 config.hide_tab_bar_if_only_one_tab = true
