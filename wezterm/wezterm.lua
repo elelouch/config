@@ -17,10 +17,12 @@ config.harfbuzz_features = {"calt=0", "clig=0", "liga=0"}
 config.font = wezterm.font("JetBrains Mono")
 config.colors = {
     background = "000000",
-    foreground = "eeeeee"
+    foreground = "ffffff"
 }
 config.hide_tab_bar_if_only_one_tab = true
 config.leader = {key = ' ', mods = 'CTRL', timeout_miliseconds=1000}
+-- How many lines of scrollback you want to retain per tab
+config.scrollback_lines = 3500
 
 local act = wezterm.action
 config.keys = {
@@ -69,6 +71,8 @@ config.keys = {
     mods = 'CMD',
     action = wezterm.action.CloseCurrentTab { confirm = true },
   },
+ --  { key = 'v', mods = 'CTRL|SHIFT', action = act.ScrollByPage(1) },
+ --  { key = 'v', mods = 'CTRL|SHIFT|ALT', action = act.ScrollByPage(-1) },
 }
 
 return config
