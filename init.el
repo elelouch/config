@@ -70,3 +70,17 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
 (setq dired-guess-shell-alist-user '(("\\.pdf\\'" "mupdf")))
+
+;; own keybindings
+(defun split-n-move()
+  "split and move current window"
+  (interactive)
+  (split-window-horizontally)
+  (other-window 1))
+
+(global-set-key (kbd "M-s M-s") #'other-window)
+(global-set-key (kbd "M-s M-v") #'split-n-move) 
+(global-set-key (kbd "M-s M-x") #'delete-window)
+(global-set-key (kbd "M-s M-a") #'delete-other-windows)
+(global-set-key (kbd "C-;") #'previous-buffer)
+(global-set-key (kbd "C-'") #'next-buffer)

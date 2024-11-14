@@ -20,59 +20,48 @@ config.colors = {
     foreground = "ffffff"
 }
 config.hide_tab_bar_if_only_one_tab = true
-config.leader = {key = ' ', mods = 'CTRL', timeout_miliseconds=1000}
+config.leader = {key = ' ', mods = 'ALT', timeout_miliseconds=1000}
 -- How many lines of scrollback you want to retain per tab
 config.scrollback_lines = 3500
-
 local act = wezterm.action
 config.keys = {
   {
     key = 'v',
-    mods = 'LEADER',
+    mods = 'CTRL|SHIFT',
     action = act.SplitHorizontal { domain = 'CurrentPaneDomain' },
   },
   {
     key = 's',
-    mods = 'LEADER',
+    mods = 'CTRL|SHIFT',
     action = act.SplitVertical { domain = 'CurrentPaneDomain' },
   },
     {
     key = "h",
-    mods = "LEADER",
+    mods = "CTRL|SHIFT",
     action = act.ActivatePaneDirection("Left"),
   },
   {
     key = "j",
-    mods = "LEADER",
+    mods = "CTRL|SHIFT",
     action = act.ActivatePaneDirection("Down"),
   },
   {
     key = "k",
-    mods = "LEADER",
+    mods = "CTRL|SHIFT",
     action = act.ActivatePaneDirection("Up"),
   },
   {
     key = "l",
-    mods = "LEADER",
+    mods = "CTRL|SHIFT",
     action = act.ActivatePaneDirection("Right"),
   },
   {
-    key = "t",
-    mods = "LEADER",
-    action = act.SpawnTab 'DefaultDomain'
-  },
-  {
     key = 'x',
-    mods = 'LEADER',
+    mods = 'CTRL|SHIFT',
     action = wezterm.action.CloseCurrentPane { confirm = true },
   },
-  {
-    key = 'w',
-    mods = 'CMD',
-    action = wezterm.action.CloseCurrentTab { confirm = true },
-  },
- --  { key = 'v', mods = 'CTRL|SHIFT', action = act.ScrollByPage(1) },
- --  { key = 'v', mods = 'CTRL|SHIFT|ALT', action = act.ScrollByPage(-1) },
+  { key = 'p', mods = 'CTRL|SHIFT', action = act.ScrollByPage(-0.5) },
+  { key = 'n', mods = 'CTRL|SHIFT', action = act.ScrollByPage(0.5) },
 }
 
 return config
