@@ -1,0 +1,4 @@
+aptitude purge `dpkg --get-selections | grep gnome | cut -f 1`
+aptitude -f install
+aptitude purge `dpkg --get-selections | grep deinstall | cut -f 1`
+aptitude -f install

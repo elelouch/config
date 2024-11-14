@@ -14,7 +14,7 @@ end
 config.freetype_load_flags = 'NO_HINTING'
 config.font_size = 14
 config.harfbuzz_features = {"calt=0", "clig=0", "liga=0"}
-config.font = wezterm.font("JetBrains Mono")
+config.font = wezterm.font("Source Code Pro")
 config.colors = {
     background = "000000",
     foreground = "ffffff"
@@ -26,7 +26,7 @@ config.scrollback_lines = 3500
 local act = wezterm.action
 config.keys = {
   {
-    key = 'v',
+    key = 'a',
     mods = 'CTRL|SHIFT',
     action = act.SplitHorizontal { domain = 'CurrentPaneDomain' },
   },

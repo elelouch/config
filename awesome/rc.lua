@@ -252,6 +252,8 @@ root.buttons(gears.table.join(
 ))
 -- }}}
 
+language_layouts = {'us', 'es'}
+last_language_index = 1
 -- {{{ Key bindings
 globalkeys = gears.table.join(
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
@@ -320,7 +322,7 @@ globalkeys = gears.table.join(
               {description = "select next", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
               {description = "select previous", group = "layout"}),
-    awful.key({ modkey }, "w", function() awful.spawn(browser) end),
+    -- awful.key({ modkey }, "w", function() awful.spawn(browser) end),
     awful.key({ modkey, "Control" }, "n",
               function ()
                   local c = awful.client.restore()
@@ -356,7 +358,15 @@ globalkeys = gears.table.join(
    awful.key({}, "XF86AudioLowerVolume", function() volume.down() end,
              {description = "volume down", group = "volume"}),
    awful.key({}, "XF86AudioMute", function() volume.toggle() end,
-             {descriptoin = "mute / unmute", group = "volume"})
+             {descriptoin = "mute / unmute", group = "volume"}),
+    awful.key({ modkey }, "u",
+        function ()
+          last_language_index = last_language_index % #language_layouts + 1
+          local epa = "setxkbmap " .. language_layouts[last_language_index]
+          naughty.notify({title = "Keyboard Layout", text=epa})
+          awful.spawn.with_shell(epa)
+        end ,
+        {description = "change layouts", group = "client"})
 )
 
 clientkeys = gears.table.join(
@@ -366,7 +376,7 @@ clientkeys = gears.table.join(
             c:raise()
         end,
         {description = "toggle fullscreen", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end,
+    awful.key({ modkey }, "w",      function (c) c:kill()                         end,
               {description = "close", group = "client"}),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
