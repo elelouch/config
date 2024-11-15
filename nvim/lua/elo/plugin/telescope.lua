@@ -1,25 +1,13 @@
 return {
   {
-    'nvim-telescope/telescope.nvim', tag = '0.1.6',
-    config=function()
-      local telescope = require('telescope')
-      local builtin = require('telescope.builtin')
-      vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-      vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-      vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-      vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-      telescope.setup {
-        defaults = {
-          preview = false,
-          file_ignore_patterns = {
-            "node_modules",
-            ".git",
-            "include",
-            "bin",
-            "lib"
-          }
-        }
-      }
+    "ibhagwan/fzf-lua",
+    -- optional for icon support
+    config = function()
+      local fzf = require("fzf-lua")
+      fzf.setup({})
+      vim.keymap.set('n', '<leader>ff', fzf.files, {})
+      vim.keymap.set('n', '<leader>fg', fzf.grep, {})
+      vim.keymap.set('n', '<leader>fb', fzf.buffers, {})
     end
   }
 }
