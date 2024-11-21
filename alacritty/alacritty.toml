@@ -1,9 +1,7 @@
-[colors.primary]
-background = "#000000"
-foreground = "#ffffff"
-
 [font]
-size = 14.0
+normal = {family="Recursive Mono Linear Static", style="Regular"}
+size = 13
 
-[font.normal]
-family = "Commit Mono"
+[colors.primary]
+background="#000000"
+foreground="#ffffff"

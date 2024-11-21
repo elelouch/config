@@ -18,4 +18,3 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 vim.opt.guicursor = ""
-vim.cmd 'colorscheme wildcharm'
