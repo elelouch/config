@@ -1,6 +1,6 @@
 [font]
-normal = {family="Recursive Mono Linear Static", style="Regular"}
-size = 13
+normal = {family="Hack", style="Regular"}
+size = 12
 
 [colors.primary]
 background="#000000"
