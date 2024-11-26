@@ -157,3 +157,5 @@
 (require 'meow)
 (meow-setup)
 (meow-global-mode 1)
+
+(global-set-key (kbd "M-o") 'other-window)
