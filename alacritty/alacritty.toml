@@ -1,6 +1,6 @@
 [font]
-normal = {family="Hack", style="Regular"}
-size = 12
+normal = {family="Input Mono", style="Regular"}
+size = 14
 
 [colors.primary]
 background="#000000"
