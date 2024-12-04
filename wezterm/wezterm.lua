@@ -15,12 +15,12 @@ config.freetype_load_flags = 'NO_HINTING'
 config.font_size = 14
 config.harfbuzz_features = {"calt=0", "clig=0", "liga=0"}
 config.font = wezterm.font({
-  family="Input Mono Narrow",
+  family="Hack",
   --stretch="Expanded"
 })
 config.colors = {
-    background = "000000",
-    foreground = "ffffff"
+    background = "002b36",
+    foreground = "93a1a1"
 }
 config.hide_tab_bar_if_only_one_tab = true
 config.leader = {key = ' ', mods = 'ALT', timeout_miliseconds=1000}
