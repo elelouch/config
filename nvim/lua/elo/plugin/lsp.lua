@@ -43,6 +43,7 @@ return {
           "angularls",
           "clangd",
           "emmet_language_server",
+          "phpactor"
         },
         handlers = {
           function(server)

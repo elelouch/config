@@ -5,8 +5,8 @@
 (set-default 'truncate-lines t)
 
 (when (member "Input Mono" (font-family-list))
-  (set-face-attribute 'default nil :font "Input Mono-12")
-  (set-face-attribute 'fixed-pitch nil :family "Input Mono-12"))
+  (set-face-attribute 'default nil :font "Input Mono-14")
+  (set-face-attribute 'fixed-pitch nil :family "Input Mono-14"))
 
 (require 'package)
 (add-to-list 'package-archives
