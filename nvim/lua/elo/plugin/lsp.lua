@@ -39,7 +39,7 @@ return {
           "hls",
           "marksman",
           "eslint",
-          "pyright",
+          "basedpyright",
           "angularls",
           "clangd",
           "emmet_language_server",
