@@ -1,6 +1,6 @@
 [font]
-normal = {family="Martian Mono", style="Regular"}
-size = 11
+normal = {family="Input Mono", style="Regular"}
+size = 13
 
 [colors.primary]
 background = "#000000"
