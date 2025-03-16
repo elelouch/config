@@ -1,10 +1,6 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    dependencies = {
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
-    },
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lspconfig = require("lspconfig")
@@ -32,6 +28,7 @@ return {
           vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
         end,
       })
+<<<<<<< HEAD
       require("mason").setup()
       require("mason-lspconfig").setup({
         ensure_installed = {
@@ -83,6 +80,9 @@ return {
           end,
         },
       })
+=======
+      lspconfig.basedpyright.setup{}
+>>>>>>> 11ed287 (removed mason from neovim)
     end,
   },
 }
